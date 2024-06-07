@@ -1,23 +1,13 @@
-import Image from "next/image";
-import Pokemon from "@/public/pokemon-3.svg";
-import localFont from "next/font/local";
 import Link from "next/link";
-
-const clashDisplayVariable = localFont({
-	src: "../fonts/ClashDisplay-Variable.woff",
-});
+import Logo from "@/app/_shared/Logo";
+import { clashDisplayVariable } from "@/app/_shared/Constants";
 
 export default function Home() {
 	return (
 		<main className="bg-white h-dvh w-[100%] flex flex-col items-center">
-			<Image
-				src={Pokemon}
-				alt="pokemon"
-				width={382.51}
-				height={248.25}
-				className="mt-[50px]"
-			/>
-
+			<div className="mt-10">
+				<Logo height={248.25} width={382.51} />
+			</div>
 			<div className="mt-5 flex flex-col items-center">
 				<h1
 					className={`text-[48px] text-black font-[600] leading-[59.04px] ${clashDisplayVariable.className}`}
