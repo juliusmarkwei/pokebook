@@ -1,6 +1,8 @@
 export interface LogoPropType {
 	height: number;
 	width: number;
+	top?: number;
+	left?: number;
 }
 
 export interface PokemonCardPropTypes {
