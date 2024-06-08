@@ -1,8 +1,8 @@
-import React from "react";
 import Image from "next/image";
 import _Logo from "@/public/pokemon-3.svg";
 import { clashDisplayVariable } from "../_shared/Constants";
 import SearchBar from "../components/ListView/SearchBar";
+import ThemeButton from "../components/ListView/ThemeButton";
 
 const Pokemon = () => {
 	return (
@@ -24,6 +24,7 @@ const Pokemon = () => {
 					</span>
 				</h1>
 				<SearchBar />
+				<ThemeButton />
 			</nav>
 		</main>
 	);
