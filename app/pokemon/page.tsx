@@ -3,6 +3,8 @@ import _Logo from "@/public/pokemon-3.svg";
 import { clashDisplayVariable } from "../_shared/Constants";
 import SearchBar from "../components/ListView/SearchBar";
 import ThemeButton from "../components/ListView/ThemeButton";
+import PokemonList from "../components/ListView/PokemonList";
+import Pagination from "../components/ListView/Pagination";
 
 const Pokemon = () => {
 	return (
@@ -25,6 +27,9 @@ const Pokemon = () => {
 				</h1>
 				<SearchBar />
 				<ThemeButton />
+
+				<PokemonList />
+				<Pagination />
 			</nav>
 		</main>
 	);
