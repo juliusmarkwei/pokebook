@@ -5,7 +5,6 @@ const baseURL = process.env.NEXT_PUBLIC_POKEMON_API_URL;
 export async function GET(req: NextRequest, context: any) {
 	const { params } = context;
 	const name = params.name;
-	console.log("name", name);
 	try {
 		const response = await fetch(`${baseURL}/pokemon/${name}/`);
 		if (response.ok) {

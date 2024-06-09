@@ -5,7 +5,7 @@ import "./globals.css";
 
 const kanit = Kanit({
 	subsets: ["latin"],
-	weight: ["100"],
+	weight: ["200"],
 });
 
 export const metadata: Metadata = {
@@ -20,9 +20,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={kanit.className}>
-				<ContextProvider>{children}</ContextProvider>
-			</body>
+			<body className={kanit.className}>{children}</body>
 		</html>
 	);
 }

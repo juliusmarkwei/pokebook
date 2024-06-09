@@ -7,13 +7,13 @@ export default function Home() {
 	return (
 		<main className="bg-white h-dvh w-[100%] flex flex-col items-center">
 			<div className="mt-10">
-				<Logo height={248.25} width={382.51} />
+				<Logo height={220} width={300} />
 			</div>
 			<div className="mt-5 flex flex-col items-center">
 				<HomeViewDescription />
 			</div>
 			<SearchBar />
-			<Link href="/pokemon" className="underline text-black mt-3">
+			<Link href="/pokemon" className="underline text-black mt-5">
 				View all
 			</Link>
 		</main>

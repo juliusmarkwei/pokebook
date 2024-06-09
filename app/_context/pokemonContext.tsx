@@ -16,7 +16,7 @@ export const ContextProvider = ({
 
 	useEffect(() => {
 		const fetchLinks = async () => {
-			await fetchPokemonLinks();
+			await fetchPokemonLinks(5);
 		};
 
 		fetchLinks();
@@ -26,50 +26,91 @@ export const ContextProvider = ({
 		if (pokemonLinks.length > 0) {
 			const updatedData = pokemonLinks.map((link: PokemonLink) => ({
 				name: link.name,
-				id: parseInt(link.url.split("/")[6]), // Assuming the ID is a number
+				id: parseInt(link.url.split("/")[6]),
 			}));
 
 			_setPokemonData((prev: PokemonData[]) => [
 				...prev,
 				...updatedData,
 			]);
-
-			console.log("Length of pokemonData", _pokemonData.length);
 		}
 	}, [pokemonLinks]);
 
-	// fetch pokemon links
-	const fetchPokemonLinks = async () => {
+	// Fetch pokemon links
+	const fetchPokemonLinks = async (limit: number) => {
 		try {
-			const response = await fetch("/api/pokemon-links");
+			const response = await fetch(`/api/pokemon-links/${limit}`);
 			if (response.ok) {
 				const data = await response.json();
 				setPokemonLinks(data);
-				console.log(data);
-				console.log(
-					"pokemonLinks",
-					JSON.stringify(pokemonLinks) ?? "No data"
-				);
 			}
 		} catch (error) {
 			console.error(error);
 		}
 	};
 
-	// fetch actual pokemon data
+	// Fetch actual pokemon data
 	const fetchPokemonData = async (name: string) => {
 		try {
 			const response = await fetch(`/api/pokemon/${name}`);
 			if (response.ok) {
 				const data = await response.json();
-				// setPokemonData((prev: PokemonData[] | null) => {
-				// 	return;
-				// });
+				return data;
 			}
 		} catch (error) {
 			console.error(error);
 		}
 	};
+
+	useEffect(() => {
+		const fetchDataForAllPokemon = async () => {
+			for (const pokemon of _pokemonData) {
+				const data = await fetchPokemonData(pokemon.name);
+				if (data) {
+					_setPokemonData((prev) => {
+						const existingPokemonIndex = prev.findIndex(
+							(p) => p.name === pokemon.name
+						);
+						const updatedPokemon = {
+							...prev[existingPokemonIndex],
+							id: data.id,
+							types: data.types.map(
+								(type: any) => type.type.name
+							),
+							height: data.height,
+							weight: data.weight,
+							sprites: {
+								front_default:
+									data.sprites.front_default,
+							},
+							abilities: data.abilities.map(
+								(ability: any) => ability.ability.name
+							),
+							stats: {
+								hp: data.stats[0].base_stat,
+								attack: data.stats[1].base_stat,
+								defense: data.stats[2].base_stat,
+								special_attack: data.stats[3].base_stat,
+								special_defense:
+									data.stats[4].base_stat,
+								speed: data.stats[5].base_stat,
+							},
+							similar: [],
+						};
+						return [
+							...prev.slice(0, existingPokemonIndex),
+							updatedPokemon,
+							...prev.slice(existingPokemonIndex + 1),
+						];
+					});
+				}
+			}
+		};
+
+		if (_pokemonData.length > 0) {
+			fetchDataForAllPokemon();
+		}
+	}, [_pokemonData]);
 
 	return (
 		<AppContext.Provider value={{ _pokemonData }}>

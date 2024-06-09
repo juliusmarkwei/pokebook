@@ -11,12 +11,12 @@ import { useAppContext } from "../_context/pokemonContext";
 import { useEffect } from "react";
 
 const Pokemon = () => {
-	const { _pokemonData } = useAppContext();
-	// console.log(_pokemonData);
+	// const { _pokemonData } = useAppContext();
+	// console.log(_pokemonData.slice(0, 2));
 
 	return (
 		<main className="bg-[#F6F6F6] h-dvh w-dvw">
-			<nav className="h-[80px] bg-white relative flex flex-row">
+			<nav className="h-[80px] bg-white flex flex-row items-center">
 				<Image
 					src={_Logo}
 					alt="pokemon"
@@ -24,7 +24,7 @@ const Pokemon = () => {
 					height={84}
 					className={`absolute top-[12px] left-[39px]`}
 				/>
-				<h1 className="text-black text-[24px] font-[600] absolute top-7 left-44 leading-[29.52px] h-[30] w-[120]">
+				<h1 className="text-black text-[24px] font-[600] relative left-44 leading-[29.52px] h-[30] w-[120]">
 					Poke
 					<span
 						className={`${clashDisplayVariable.className} text-[#E85382]`}
@@ -32,12 +32,18 @@ const Pokemon = () => {
 						book
 					</span>
 				</h1>
-				<SearchBar />
-				<ThemeButton />
+				<div className="border rounded-[30px] border-[#E1E1E1] h-[48px] w-[30%] pt-[12px] pr-[32px] pb-[12px] pl-[20px] ml-[30%] flex flex-row gap-3">
+					<SearchBar />
+				</div>
+				<div className="border w-[40px] h-[40px] rounded-[50px] border-[#868686] cursor-pointer ml-[25%] flex flex-col justify-center items-center">
+					<ThemeButton />
+				</div>
+			</nav>
 
+			<section className="">
 				<PokemonList />
 				<Pagination />
-			</nav>
+			</section>
 		</main>
 	);
 };

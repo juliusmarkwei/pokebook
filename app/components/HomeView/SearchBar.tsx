@@ -3,7 +3,7 @@ import Link from "next/link";
 const SearchBar = () => {
 	return (
 		<>
-			<div className="flex flex-row items-center border-[10px] rounded-[60px] border-[#DE527F] w-[515px] h-[81px] text-[24px] py-[8px] pl-[20px] pr-[9px] mt-[40px]">
+			<div className="flex flex-row items-center border-[8px] rounded-[60px] border-[#DE527F] w-[450px] h-[70px] text-[24px] py-[8px] pl-[20px] pr-[9px] mt-[40px]">
 				<input
 					type="text"
 					placeholder="Enter pokemon name"
@@ -11,7 +11,7 @@ const SearchBar = () => {
 				/>
 				<Link
 					href="/pokemon"
-					className="h-[48px] w-[48px] p-[14px] bg-[#DE527F] rounded-[50%]"
+					className="h-[40px] w-[40px] p-[10px] bg-[#DE527F] rounded-[50%]"
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"

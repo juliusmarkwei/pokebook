@@ -2,7 +2,7 @@ import React from "react";
 
 const SearchBar = () => {
 	return (
-		<div className="border rounded-[30px] border-[#E1E1E1] h-[48px] w-[440px] absolute top-[17px] left-[500px] pt-[12px] pr-[32px] pb-[12px] pl-[20px] flex flex-row gap-3">
+		<>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				fill="none"
@@ -22,7 +22,7 @@ const SearchBar = () => {
 				placeholder="Enter pokemon name"
 				className="text-[#7B7B7B] focus:outline-none"
 			/>
-		</div>
+		</>
 	);
 };
 
