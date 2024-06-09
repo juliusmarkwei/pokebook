@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import _Logo from "@/public/pokemon-3.svg";
 import { clashDisplayVariable } from "../_shared/Constants";
@@ -5,8 +7,13 @@ import SearchBar from "../components/ListView/SearchBar";
 import ThemeButton from "../components/ListView/ThemeButton";
 import PokemonList from "../components/ListView/PokemonList";
 import Pagination from "../components/ListView/Pagination";
+import { useAppContext } from "../_context/pokemonContext";
+import { useEffect } from "react";
 
 const Pokemon = () => {
+	const { _pokemonData } = useAppContext();
+	// console.log(_pokemonData);
+
 	return (
 		<main className="bg-[#F6F6F6] h-dvh w-dvw">
 			<nav className="h-[80px] bg-white relative flex flex-row">
