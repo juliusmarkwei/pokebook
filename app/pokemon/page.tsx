@@ -40,9 +40,14 @@ const Pokemon = () => {
 				</div>
 			</nav>
 
-			<section className="">
+			<section className="flex flex-col items-center justify-center gap-8">
 				<PokemonList />
-				<Pagination />
+				<div className="flex flex-row items-center w-[85%]">
+					<span className="flex-grow">
+						<Pagination />
+					</span>
+					<h1>Pagenumber selection</h1>
+				</div>
 			</section>
 		</main>
 	);
