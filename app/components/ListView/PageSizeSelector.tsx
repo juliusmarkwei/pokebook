@@ -57,19 +57,23 @@ const PageSizeSelector = () => {
 					d="M19.5 8.25l-7.5 7.5-7.5-7.5"
 				/>
 			</svg>
-			{showDropDown && (
-				<div className="absolute top-10 left-0 w-[95px] bg-white rounded-md flex flex-col items-center gap-2 transition-all ease-in duration-200">
-					{[12, 16, 24].map((size) => (
-						<h1
-							key={size}
-							className={`flex-grow ${clashDisplayVariable.className} text-lg rounded-md bg-white h-[80%] text-center pt-1 hover:bg-[#E1E1E1] w-[99%] cursor-pointer`}
-							onClick={() => handlePageSizeChange(size)}
-						>
-							{size}
-						</h1>
-					))}
-				</div>
-			)}
+			<div
+				className={`absolute top-10 left-0 w-[95px] bg-white rounded-md flex flex-col items-center gap-2 transition-color duration-500 ${
+					showDropDown
+						? "opacity-100 transform translate-y-0"
+						: "opacity-0 transform -translate-y-2 pointer-events-none"
+				}`}
+			>
+				{[12, 16, 24].map((size) => (
+					<h1
+						key={size}
+						className={`flex-grow ${clashDisplayVariable.className} text-lg rounded-md bg-white h-[95%] text-center pt-1 hover:bg-[#E1E1E1] w-[99%] cursor-pointer`}
+						onClick={() => handlePageSizeChange(size)}
+					>
+						{size}
+					</h1>
+				))}
+			</div>
 		</div>
 	);
 };
