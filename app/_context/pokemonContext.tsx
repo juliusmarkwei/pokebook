@@ -13,10 +13,11 @@ export const ContextProvider = ({
 }) => {
 	const [pokemonLinks, setPokemonLinks] = useState<PokemonLink[]>([]);
 	const [_pokemonData, _setPokemonData] = useState<PokemonData[]>([]);
+	const [pokemonSize, setPokemonSize] = useState<number>(0);
 
 	useEffect(() => {
 		const fetchLinks = async () => {
-			await fetchPokemonLinks(5);
+			await fetchPokemonLinks(pokemonSize);
 		};
 
 		fetchLinks();
@@ -112,8 +113,12 @@ export const ContextProvider = ({
 		}
 	}, [_pokemonData]);
 
+	const handleSetPokemonSize = (size: number) => {
+		setPokemonSize(size);
+	};
+
 	return (
-		<AppContext.Provider value={{ _pokemonData }}>
+		<AppContext.Provider value={{ _pokemonData, handleSetPokemonSize }}>
 			{children}
 		</AppContext.Provider>
 	);

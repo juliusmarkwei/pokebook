@@ -9,6 +9,7 @@ import PokemonList from "../components/ListView/PokemonList";
 import Pagination from "../components/ListView/Pagination";
 import { useAppContext } from "../_context/pokemonContext";
 import { useEffect } from "react";
+import PageSizeSelector from "../components/ListView/PageSizeSelector";
 
 const Pokemon = () => {
 	// const { _pokemonData } = useAppContext();
@@ -46,7 +47,7 @@ const Pokemon = () => {
 					<span className="flex-grow">
 						<Pagination />
 					</span>
-					<h1>Pagenumber selection</h1>
+					<PageSizeSelector />
 				</div>
 			</section>
 		</main>
