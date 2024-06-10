@@ -17,7 +17,7 @@ const Pokemon = () => {
 
 	return (
 		<main className="bg-[#F6F6F6] h-dvh w-dvw">
-			<nav className="h-[80px] bg-white flex flex-row items-center">
+			<nav className="h-[75px] bg-white flex flex-row items-center">
 				<Image
 					src={_Logo}
 					alt="pokemon"
@@ -36,7 +36,7 @@ const Pokemon = () => {
 				<div className="border rounded-[30px] border-[#E1E1E1] h-[48px] w-[30%] pt-[12px] pr-[32px] pb-[12px] pl-[20px] ml-[30%] flex flex-row gap-3">
 					<SearchBar />
 				</div>
-				<div className="border w-[40px] h-[40px] rounded-[50px] border-[#868686] cursor-pointer ml-[25%] flex flex-col justify-center items-center">
+				<div className="border w-[35px] h-[35px] rounded-[50px] border-[#868686] cursor-pointer ml-[25%] flex flex-col justify-center items-center">
 					<ThemeButton />
 				</div>
 			</nav>
