@@ -1,4 +1,3 @@
-import React from "react";
 import PokemonCard from "./PokemonCard";
 import { useAppContext } from "@/app/_context/pokemonContext";
 import { PokemonData } from "@/app/_types/pokemonData";
@@ -7,7 +6,7 @@ const PokemonList = () => {
 	const { pokemonData, isLoading } = useAppContext();
 	isLoading ? console.log("Loading...") : console.log(pokemonData);
 	return (
-		<section className="h-[1100px] w-[90%] grid grid-cols-4 grid-rows-2 gap-3 gap-y-20 justify-center items-center mb-[20px] mt-[15%]">
+		<section className="h-[1100px] w-[90%] grid grid-cols-4 grid-rows-2 flex-wrap gap-3 gap-y-20 justify-center items-center mb-[20px] mt-[15%]">
 			{!isLoading &&
 				pokemonData.map((pokemon: PokemonData) => (
 					<PokemonCard

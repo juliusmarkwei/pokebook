@@ -1,12 +1,10 @@
-import React, { FC, useState } from "react";
+// import React, { FC, useState } from "react";
 import { clashDisplayVariable } from "@/app/_shared/Constants";
-import { PaginationProps } from "@/app/_types/propTypes";
+// import { PaginationProps } from "@/app/_types/propTypes";
+import { useAppContext } from "@/app/_context/pokemonContext";
 
-const Pagination: FC<PaginationProps> = ({
-	selectedPageNumber,
-	setSelectedPageNumber,
-}) => {
-	// const [selectedPageNumber, setSelectedPageNumber] = useState(selected);
+const Pagination = () => {
+	const { selectedPageNumber, setSelectedPageNumber } = useAppContext();
 
 	const handleSelectPage = (index: number) => {
 		setSelectedPageNumber(index);

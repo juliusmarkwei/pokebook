@@ -32,7 +32,7 @@ const PokemonCard: FC<PokemonCardPropTypes> = ({ name, image, types }) => {
 				{types.map((type) => (
 					<span
 						key={type}
-						className="bg-[#F6F6F6] font-[400] text-[16px] h-[30px] w-[90px] flex flex-row items-center justify-center rounded-[40px] gap-3 p-2"
+						className="bg-[#F6F6F6] font-[400] text-[16px] h-[30px] w-[95px] flex flex-row items-center justify-center rounded-[40px] gap-3 p-2"
 					>
 						{type == "fire"
 							? "🔥"

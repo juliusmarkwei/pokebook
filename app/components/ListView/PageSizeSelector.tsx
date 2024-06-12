@@ -5,11 +5,12 @@ import { useAppContext } from "@/app/_context/pokemonContext";
 const PageSizeSelector = () => {
 	const [showDropDown, setShowDropDown] = useState(false);
 	const dropdownRef = useRef<HTMLDivElement>(null);
-	const { pageSize, setPageSize } = useAppContext();
+	const { pageSize, setPageSize, setSelectedPageNumber } = useAppContext();
 
 	const handlePageSizeChange = (size: number) => {
 		setPageSize(size);
 		setShowDropDown(false);
+		setSelectedPageNumber(0);
 	};
 
 	const handleShowDropDown = () => {

@@ -16,18 +16,21 @@ export const ContextProvider = ({
 	const [pageSize, setPageSize] = useState<number>(8);
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 	const [fetchDetailedData, setFetchDetailedData] = useState<boolean>(false);
-	const [selectedPageNumber, setSelectedPageNumber] = useState<number>(1);
+	const [selectedPageNumber, setSelectedPageNumber] = useState<number>(0);
 
 	useEffect(() => {
 		setIsLoading(true);
 
 		const fetchLinks = async () => {
-			await fetchPokemonLinks(pageSize);
+			await fetchPokemonLinks(
+				pageSize,
+				(selectedPageNumber + 1) * pageSize
+			);
 		};
 
 		fetchLinks();
 		console.log("------------------- Links fetched");
-	}, [pageSize]);
+	}, [pageSize, selectedPageNumber]);
 
 	useEffect(() => {
 		if (pokemonLinks.length > 0) {
@@ -112,9 +115,11 @@ export const ContextProvider = ({
 	}, [pokemonData]);
 
 	// Fetch pokemon links
-	const fetchPokemonLinks = async (limit: number) => {
+	const fetchPokemonLinks = async (limit: number, offset: Number) => {
 		try {
-			const response = await fetch(`/api/pokemon-links/${limit}`);
+			const response = await fetch(
+				`/api/pokemon-links/${limit}/${offset}`
+			);
 			if (response.ok) {
 				const data = await response.json();
 				setPokemonLinks(data);
