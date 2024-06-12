@@ -2,18 +2,22 @@ import { PokemonCardPropTypes } from "@/app/_types/propTypes";
 import Image from "next/image";
 import { FC } from "react";
 import { clashDisplayVariable } from "@/app/_shared/Constants";
+import ViewPokemon from "./ViewPokemon";
+import Link from "next/link";
 
 const PokemonCard: FC<PokemonCardPropTypes> = ({ name, image, types }) => {
 	console.log(image);
 	return (
-		<div className="h-[260px] w-[278px] rounded-2xl flex flex-col gap-3 items-center bg-white">
+		<div
+			className={`hover:h-[329px] h-[260px] w-[278px] rounded-2xl flex flex-col gap-3 items-center bg-white group transition-all duration-200 delay-200`}
+		>
 			{image ? (
 				<span className="w-[268px] h-[148px] rounded-2xl bg-[#F1F1F1] flex items-center justify-center my-3">
 					<Image
 						src={image}
 						alt={name}
-						width={190}
-						height={160}
+						width={180}
+						height={150}
 						className=" relative top-[-40px]"
 					/>
 				</span>
@@ -28,7 +32,7 @@ const PokemonCard: FC<PokemonCardPropTypes> = ({ name, image, types }) => {
 			>
 				{name}
 			</h2>
-			<div className="flex flex-row gap-2 rounded-[40px] h-[30px] w-[190px] justify-center items-center">
+			<div className="flex flex-row gap-2 rounded-[40px] h-[30px] w-[190px] justify-center items-center flex-grow">
 				{types.map((type) => (
 					<span
 						key={type}
@@ -79,6 +83,11 @@ const PokemonCard: FC<PokemonCardPropTypes> = ({ name, image, types }) => {
 						})}
 					</span>
 				))}
+			</div>
+			<div className="opacity-0 group-hover:opacity-100 inset-0 w-[268px] h-[46px] rounded-[14px] bg-[#E85382] cursor-pointer">
+				<Link href={`/pokemon/${name}`}>
+					<ViewPokemon />
+				</Link>
 			</div>
 		</div>
 	);
