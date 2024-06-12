@@ -10,3 +10,8 @@ export interface PokemonCardPropTypes {
 	image: string;
 	types: string[];
 }
+
+export interface PaginationProps {
+	selectedPageNumber?: number;
+	setSelectedPageNumber: (index: number) => void;
+}

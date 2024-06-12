@@ -7,7 +7,7 @@ const PokemonList = () => {
 	const { pokemonData, isLoading } = useAppContext();
 	isLoading ? console.log("Loading...") : console.log(pokemonData);
 	return (
-		<section className="border-2 border-pink-400 h-[1050px] w-[90%] grid grid-cols-4 grid-rows-2 gap-3 gap-y-20 justify-center items-center mt-[10%] mb-[20px]">
+		<section className="h-[1100px] w-[90%] grid grid-cols-4 grid-rows-2 gap-3 gap-y-20 justify-center items-center mb-[20px] mt-[15%]">
 			{!isLoading &&
 				pokemonData.map((pokemon: PokemonData) => (
 					<PokemonCard

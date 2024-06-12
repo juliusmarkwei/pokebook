@@ -15,13 +15,11 @@ const TopBar = () => {
 				priority
 				className={`absolute top-[12px] left-[39px]`}
 			/>
-			<h1 className="text-black text-[24px] font-[600] relative left-44 leading-[29.52px] h-[30px] w-[120px]">
+			<h1
+				className={`${clashDisplayVariable.className} text-black text-[24px] font-[600] relative left-44 leading-[29.52px] h-[30px] w-[120px]`}
+			>
 				Poke
-				<span
-					className={`${clashDisplayVariable.className} text-[#E85382]`}
-				>
-					book
-				</span>
+				<span className="text-[#E85382]">book</span>
 			</h1>
 			<div className="border rounded-[30px] border-[#E1E1E1] h-[48px] w-[440px] pt-[12px] pr-[32px] pb-[12px] pl-[20px] ml-[30%] flex flex-row gap-3">
 				<SearchBar />

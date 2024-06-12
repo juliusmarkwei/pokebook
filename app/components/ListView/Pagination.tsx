@@ -1,15 +1,15 @@
 import React, { FC, useState } from "react";
 import { clashDisplayVariable } from "@/app/_shared/Constants";
+import { PaginationProps } from "@/app/_types/propTypes";
 
-interface PaginationProps {
-	selected?: number; // The index of the selected page
-}
-
-const Pagination: FC<PaginationProps> = ({ selected = 0 }) => {
-	const [selectedPage, setSelectedPage] = useState(selected);
+const Pagination: FC<PaginationProps> = ({
+	selectedPageNumber,
+	setSelectedPageNumber,
+}) => {
+	// const [selectedPageNumber, setSelectedPageNumber] = useState(selected);
 
 	const handleSelectPage = (index: number) => {
-		setSelectedPage(index);
+		setSelectedPageNumber(index);
 	};
 
 	return (
@@ -17,7 +17,7 @@ const Pagination: FC<PaginationProps> = ({ selected = 0 }) => {
 			<button
 				className={`h-full w-[13%] text-lg font-extrabold bg-[#E1E1E1] rounded-md`}
 				onClick={() =>
-					handleSelectPage(Math.max(selectedPage - 1, 0))
+					handleSelectPage(Math.max(selectedPageNumber - 1, 0))
 				}
 			>
 				&lt;
@@ -29,7 +29,7 @@ const Pagination: FC<PaginationProps> = ({ selected = 0 }) => {
 					className={`h-full w-[13%] ${
 						clashDisplayVariable.className
 					} ${
-						selectedPage === index
+						selectedPageNumber === index
 							? "bg-[#E85382] text-white"
 							: "bg-[#E1E1E1]"
 					} rounded-md`}
@@ -47,7 +47,7 @@ const Pagination: FC<PaginationProps> = ({ selected = 0 }) => {
 			<button
 				className={`h-full w-[13%] text-lg font-extrabold bg-[#E1E1E1] rounded-md`}
 				onClick={() =>
-					handleSelectPage(Math.min(selectedPage + 1, 11))
+					handleSelectPage(Math.min(selectedPageNumber + 1, 11))
 				}
 			>
 				&gt;
