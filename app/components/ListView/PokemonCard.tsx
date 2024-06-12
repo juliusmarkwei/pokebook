@@ -6,7 +6,7 @@ import { clashDisplayVariable } from "@/app/_shared/Constants";
 const PokemonCard: FC<PokemonCardPropTypes> = ({ name, image, types }) => {
 	console.log(image);
 	return (
-		<div className="h-[268px] w-[288px] rounded-2xl flex flex-col gap-3 items-center bg-white">
+		<div className="h-[260px] w-[278px] rounded-2xl flex flex-col gap-3 items-center bg-white">
 			{image ? (
 				<span className="w-[268px] h-[148px] rounded-2xl bg-[#F1F1F1] flex items-center justify-center my-3">
 					<Image

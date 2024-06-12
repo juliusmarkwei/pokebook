@@ -5,7 +5,7 @@ import { PokemonData } from "@/app/_types/pokemonData";
 const PokemonList = () => {
 	const { pokemonData, isLoading } = useAppContext();
 	return (
-		<section className="h-[95%] w-[90%] grid grid-cols-4 grid-rows-2 gap-3 gap-y-10 justify-center items-center border border-black">
+		<section className="h-[95%] w-[90%] grid grid-cols-4 grid-rows-2 gap-3 gap-y-10 justify-center items-center">
 			{!isLoading &&
 				pokemonData.map((pokemon: PokemonData) => (
 					<PokemonCard

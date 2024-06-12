@@ -109,11 +109,6 @@ export const ContextProvider = ({
 		}
 	}, [fetchDetailedData]); // Trigger fetching detailed data only when fetchDetailedData is true
 
-	// New useEffect to log the updated pokemonData length
-	useEffect(() => {
-		console.log(`Pokemon data length is ${pokemonData.length}`);
-	}, [pokemonData]);
-
 	// Fetch pokemon links
 	const fetchPokemonLinks = async (limit: number, offset: Number) => {
 		try {
