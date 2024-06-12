@@ -9,5 +9,4 @@ export interface PokemonCardPropTypes {
 	name: string;
 	image: string;
 	types: string[];
-	abilities: string[];
 }

@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
-import { clashDisplayVariable } from "@/app/_shared/Constants"; // Ensure this path is correct
+import { clashDisplayVariable } from "@/app/_shared/Constants";
+import { useAppContext } from "@/app/_context/pokemonContext";
 
 const PageSizeSelector = () => {
-	const [pageSize, setPageSize] = useState(8);
 	const [showDropDown, setShowDropDown] = useState(false);
 	const dropdownRef = useRef<HTMLDivElement>(null);
+	const { pageSize, setPageSize } = useAppContext();
 
 	const handlePageSizeChange = (size: number) => {
 		setPageSize(size);
@@ -67,7 +68,7 @@ const PageSizeSelector = () => {
 				{[12, 16, 24].map((size) => (
 					<h1
 						key={size}
-						className={`flex-grow ${clashDisplayVariable.className} text-lg rounded-md bg-white h-[95%] text-center pt-1 hover:bg-[#E1E1E1] w-[99%] cursor-pointer`}
+						className={`flex-grow ${clashDisplayVariable.className} text-lg rounded-md bg-white h-[90%] text-center hover:bg-[#E1E1E1] w-[99%] cursor-pointer`}
 						onClick={() => handlePageSizeChange(size)}
 					>
 						{size}

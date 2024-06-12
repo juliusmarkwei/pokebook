@@ -20,7 +20,7 @@ const SearchBar = () => {
 			<input
 				type="text"
 				placeholder="Enter pokemon name"
-				className="text-[#7B7B7B] focus:outline-none"
+				className="text-[#7B7B7B] focus:outline-none w-full"
 			/>
 		</>
 	);
