@@ -4,9 +4,8 @@ import { PokemonData } from "@/app/_types/pokemonData";
 
 const PokemonList = () => {
 	const { pokemonData, isLoading } = useAppContext();
-	isLoading ? console.log("Loading...") : console.log(pokemonData);
 	return (
-		<section className="h-[1100px] w-[90%] grid grid-cols-4 grid-rows-2 flex-wrap gap-3 gap-y-20 justify-center items-center mb-[20px] mt-[15%]">
+		<section className="h-[95%] w-[90%] grid grid-cols-4 grid-rows-2 gap-3 gap-y-10 justify-center items-center border border-black">
 			{!isLoading &&
 				pokemonData.map((pokemon: PokemonData) => (
 					<PokemonCard
@@ -14,7 +13,8 @@ const PokemonList = () => {
 						name={pokemon.name}
 						image={
 							pokemon.sprites.other?.dream_world
-								?.front_default
+								?.front_default ||
+							pokemon.sprites.front_default
 						}
 						types={pokemon.types!}
 					/>

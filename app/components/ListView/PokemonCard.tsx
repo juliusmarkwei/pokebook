@@ -6,15 +6,15 @@ import { clashDisplayVariable } from "@/app/_shared/Constants";
 const PokemonCard: FC<PokemonCardPropTypes> = ({ name, image, types }) => {
 	console.log(image);
 	return (
-		<div className="h-[288px] w-[288px] rounded-2xl flex flex-col gap-3 items-center bg-white">
+		<div className="h-[268px] w-[288px] rounded-2xl flex flex-col gap-3 items-center bg-white">
 			{image ? (
 				<span className="w-[268px] h-[148px] rounded-2xl bg-[#F1F1F1] flex items-center justify-center my-3">
 					<Image
 						src={image}
 						alt={name}
-						width={190.76}
-						height={186.77}
-						className=" relative top-[-45px]"
+						width={190}
+						height={160}
+						className=" relative top-[-40px]"
 					/>
 				</span>
 			) : (
@@ -32,7 +32,7 @@ const PokemonCard: FC<PokemonCardPropTypes> = ({ name, image, types }) => {
 				{types.map((type) => (
 					<span
 						key={type}
-						className="bg-[#F6F6F6] font-[400] text-[16px] h-[30px] w-[95px] flex flex-row items-center justify-center rounded-[40px] gap-3 p-2"
+						className="bg-[#F6F6F6] font-[400] text-[16px] h-[30px] w-[98px] flex flex-row items-center justify-center rounded-[40px] gap-3 px-1"
 					>
 						{type == "fire"
 							? "🔥"
@@ -43,7 +43,7 @@ const PokemonCard: FC<PokemonCardPropTypes> = ({ name, image, types }) => {
 							: type == "bug"
 							? "🐞"
 							: type == "normal"
-							? "🐾"
+							? "🐻"
 							: type == "poison"
 							? "☠️"
 							: type == "electric"
@@ -71,7 +71,12 @@ const PokemonCard: FC<PokemonCardPropTypes> = ({ name, image, types }) => {
 							: type == "flying"
 							? "🦋"
 							: null}{" "}
-						{type}
+						{type.replace(/\w+/g, function (w) {
+							return (
+								w[0].toUpperCase() +
+								w.slice(1).toLowerCase()
+							);
+						})}
 					</span>
 				))}
 			</div>

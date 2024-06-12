@@ -6,7 +6,7 @@ import ThemeButton from "@/app/components/ListView/ThemeButton";
 
 const TopBar = () => {
 	return (
-		<nav className="h-[80px] w-[1440px] bg-white flex flex-row items-center relative">
+		<nav className="h-[80px] w-[100%] bg-white flex flex-row items-center relative">
 			<Image
 				src={_Logo}
 				alt="pokemon"
