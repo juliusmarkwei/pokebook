@@ -15,6 +15,8 @@ const config: Config = {
 					"conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
 				"custom-gradient":
 					"linear-gradient(180deg, #7FCAD1 0%, #3DA0A9 100%)",
+				"custom-gradient2":
+					"linear-gradient(270deg, #FFFFFF 0%, rgba(217, 217, 217, 0.06) 51.04%, #FFFFFF 100%)",
 			},
 		},
 	},

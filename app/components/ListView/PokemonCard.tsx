@@ -14,16 +14,16 @@ const PokemonCard: FC<PokemonCardPropTypes> = ({ name, image, types }) => {
 
 	return (
 		<div
-			className={`hover:h-[329px] h-[260px] w-[278px] rounded-2xl flex flex-col gap-3 items-center bg-white group transition-all duration-200 delay-200`}
+			className={`hover:h-[329px] h-[268px] w-[288px] rounded-2xl flex flex-col gap-3 items-center bg-white group transition-all duration-200 delay-200`}
 		>
 			{image ? (
-				<span className="w-[268px] h-[148px] rounded-2xl bg-[#F1F1F1] flex items-center justify-center my-3">
+				<span className="w-[268px] h-[168px] rounded-2xl bg-[#F1F1F1] flex items-center justify-center my-3 relative">
 					<Image
 						src={image}
 						alt={name}
 						width={180}
 						height={150}
-						className="relative top-[-40px]"
+						className="absolute top-[-40px]"
 					/>
 				</span>
 			) : (
