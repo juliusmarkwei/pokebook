@@ -4,7 +4,7 @@ const HomeViewDescription = () => {
 	return (
 		<>
 			<h1
-				className={`text-[48px] text-black font-[600] leading-[59.04px] ${clashDisplayVariable.className}`}
+				className={`text-[48px] text-black font-[600] leading-[59.04px] ${clashDisplayVariable.className} w-[246px] h-[59px`}
 			>
 				Poké<span className="text-[#DE527F] ml-2">book</span>
 			</h1>

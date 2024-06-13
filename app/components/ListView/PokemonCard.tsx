@@ -1,12 +1,17 @@
 import { PokemonCardPropTypes } from "@/app/_types/propTypes";
 import Image from "next/image";
-import { FC } from "react";
+import { FC, useState } from "react";
 import { clashDisplayVariable } from "@/app/_shared/Constants";
 import ViewPokemon from "./ViewPokemon";
 import Link from "next/link";
+import DetailView from "@/app/components/ListView/DetailView";
+import { useAppContext } from "@/app/_context/pokemonContext";
+import { PokemonData } from "@/app/_types/pokemonData";
 
 const PokemonCard: FC<PokemonCardPropTypes> = ({ name, image, types }) => {
-	console.log(image);
+	const { pokemonData, setSelectedCard } = useAppContext();
+	// const [pokemonDetail, setPokemonDetail] = useState<PokemonData>({});
+
 	return (
 		<div
 			className={`hover:h-[329px] h-[260px] w-[278px] rounded-2xl flex flex-col gap-3 items-center bg-white group transition-all duration-200 delay-200`}
@@ -18,7 +23,7 @@ const PokemonCard: FC<PokemonCardPropTypes> = ({ name, image, types }) => {
 						alt={name}
 						width={180}
 						height={150}
-						className=" relative top-[-40px]"
+						className="relative top-[-40px]"
 					/>
 				</span>
 			) : (
@@ -28,9 +33,9 @@ const PokemonCard: FC<PokemonCardPropTypes> = ({ name, image, types }) => {
 			)}
 
 			<h2
-				className={`w-[115px] h-[30px] text-[24px] font-[500] leading-[29.52px] ${clashDisplayVariable.className}`}
+				className={`w-[115px] h-[30px] text-[24px] font-[500] leading-[29.52px] ${clashDisplayVariable.className} flex justify-center items-center`}
 			>
-				{name}
+				{name.trim()}
 			</h2>
 			<div className="flex flex-row gap-2 rounded-[40px] h-[30px] w-[190px] justify-center items-center flex-grow">
 				{types.map((type) => (
@@ -84,10 +89,11 @@ const PokemonCard: FC<PokemonCardPropTypes> = ({ name, image, types }) => {
 					</span>
 				))}
 			</div>
-			<div className="opacity-0 group-hover:opacity-100 inset-0 w-[268px] h-[46px] rounded-[14px] bg-[#E85382] cursor-pointer">
-				<Link href={`/pokemon/${name}`}>
-					<ViewPokemon />
-				</Link>
+			<div
+				className="opacity-0 group-hover:opacity-100 inset-0 w-[268px] h-[46px] rounded-[14px] bg-[#E85382] cursor-pointer"
+				onClick={() => setSelectedCard(name)}
+			>
+				<ViewPokemon />
 			</div>
 		</div>
 	);

@@ -17,6 +17,7 @@ export const ContextProvider = ({
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 	const [fetchDetailedData, setFetchDetailedData] = useState<boolean>(false);
 	const [selectedPageNumber, setSelectedPageNumber] = useState<number>(0);
+	const [selectedCard, setSelectedCard] = useState<string>("");
 
 	useEffect(() => {
 		setIsLoading(true);
@@ -144,6 +145,8 @@ export const ContextProvider = ({
 		isLoading,
 		selectedPageNumber,
 		setSelectedPageNumber,
+		selectedCard,
+		setSelectedCard,
 	};
 
 	return (

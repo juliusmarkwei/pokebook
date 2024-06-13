@@ -3,7 +3,7 @@ import Link from "next/link";
 const SearchBar = () => {
 	return (
 		<>
-			<div className="flex flex-row items-center border-[8px] rounded-[60px] border-[#DE527F] w-[450px] h-[70px] text-[24px] py-[8px] pl-[20px] pr-[9px] mt-[40px]">
+			<div className="flex flex-row items-center border-[8px] rounded-[60px] border-[#DE527F] w-[536px] h-[81px] text-[24px] py-[8px] pl-[20px] pr-[9px] mt-[80px]">
 				<input
 					type="text"
 					placeholder="Enter pokemon name"
