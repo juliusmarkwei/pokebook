@@ -5,6 +5,7 @@ import PokemonList from "../components/ListView/PokemonList";
 import Pagination from "../components/ListView/Pagination";
 import PageSizeSelector from "../components/ListView/PageSizeSelector";
 import { useAppContext } from "../_context/pokemonContext";
+import Typewriter from 'typewriter-effect';
 
 const Pokemon = () => {
 	const { isLoading } = useAppContext();
@@ -13,7 +14,17 @@ const Pokemon = () => {
 			<TopBar />
 
 			{isLoading ? (
-				<span className="loading loading-spinner text-[#E85382] ml-[40%] mt-10 h-[40%] w-[30%]"></span>
+				<span className="text-black flex justify-center mt-[20%]">
+				<Typewriter
+				  options={{ loop: true, delay: 100 }}
+				  onInit={(typewriter) => {
+					typewriter.typeString('Loading...')
+					  .pauseFor(2500)
+					  .deleteAll()
+					  .start();
+				  }}
+				/>
+			  </span>
 			) : (
 				<section className="flex flex-col items-center justify-center gap-8 h-[790px] mt-[65px]">
 					<PokemonList />

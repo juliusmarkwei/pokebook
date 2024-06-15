@@ -10,6 +10,7 @@ export async function GET(req: NextRequest, context: any) {
 		const response = await fetch(
 			`${baseURL}/pokemon/?limit=${limit}&offset=${offset}`
 		);
+		
 		if (response.ok) {
 			const data = await response.json();
 			return new Response(JSON.stringify(data["results"]));

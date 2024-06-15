@@ -13,6 +13,7 @@ export async function GET(req: NextRequest, context: any) {
 		}
 		return new Response(null, { status: response.status });
 	} catch (error) {
+		console.log(error);
 		return new Response(null, { status: 500 });
 	}
 }
