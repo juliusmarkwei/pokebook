@@ -14,7 +14,7 @@ const Pokemon = () => {
       <TopBar />
 
       {isLoading ? (
-        <span className="text-black flex justify-center mt-[20%]">
+        <span className="text-black flex justify-center mt-[30%]">
           <Typewriter
             options={{ loop: true, delay: 100 }}
             onInit={(typewriter) => {

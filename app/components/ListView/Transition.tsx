@@ -196,7 +196,7 @@ const TransitionPage = ({}) => {
                                       <div className="flex justify-end">
                                         Abilities
                                       </div>
-                                      <div>
+                                      <div className="mt-7">
                                         <ul>
                                           {pokemonDetail.abilities?.map(
                                             (

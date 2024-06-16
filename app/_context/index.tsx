@@ -56,7 +56,6 @@ export const ContextProvider = ({
       const updatedData = await Promise.all(
         pokemonData.map(async (pokemon) => {
           const data = await fetchPokemonData(pokemon.name);
-          console.log(`data: ${data.name}`);
           if (data) {
             return {
               ...pokemon,
