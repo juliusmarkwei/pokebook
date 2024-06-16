@@ -28,7 +28,7 @@ const TopBar = () => {
           className={`${clashDisplayVariable.className} text-black text-[24px] font-[600] relative left-44 leading-[29.52px] h-[30px] w-[120px]`}
         >
           Poke
-          <span className={`text-[${theme}]`}>book</span>
+          <span className={`text-[#${theme}]`}>book</span>
         </h1>
       </Link>
       <div className="border rounded-[30px] border-[#E1E1E1] h-[48px] w-[440px] pt-[12px] pr-[32px] pb-[12px] pl-[20px] ml-[30%] flex flex-row gap-3">

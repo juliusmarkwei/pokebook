@@ -24,7 +24,7 @@ const Pagination = () => {
           onClick={() => handleSelectPage(index)}
           className={`h-full w-[13%] ${clashDisplayVariable.className} ${
             selectedPageNumber === index
-              ? `bg-[${theme}] text-white`
+              ? `bg-[#${theme}] text-white`
               : "bg-[#E1E1E1]"
           } rounded-md`}
         >

@@ -19,7 +19,7 @@ export const ContextProvider = ({
   const [selectedPageNumber, setSelectedPageNumber] = useState<number>(0);
   const [selectedCard, setSelectedCard] = useState<string>("");
   const [showColorTheme, setShowColorTheme] = useState<boolean>(false);
-  const [theme, setTheme] = useState<string>("#E85382");
+  const [theme, setTheme] = useState<string>("E85382");
 
   useEffect(() => {
     setIsLoading(true);

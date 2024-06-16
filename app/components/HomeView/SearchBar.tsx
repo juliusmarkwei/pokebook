@@ -7,7 +7,7 @@ const SearchBar = () => {
   return (
     <>
       <div
-        className={`flex flex-row items-center border-[8px] rounded-[60px] border-[${theme}] w-[536px] h-[81px] text-[24px] py-[8px] pl-[20px] pr-[9px] mt-[80px]`}
+        className={`flex flex-row items-center border-[8px] rounded-[60px] border-[#${theme}] w-[536px] h-[81px] text-[24px] py-[8px] pl-[20px] pr-[9px] mt-[80px]`}
       >
         <input
           type="text"
@@ -16,7 +16,7 @@ const SearchBar = () => {
         />
         <Link
           href="/pokemon"
-          className={`h-[40px] w-[40px] p-[10px] bg-[${theme}] rounded-[50%]`}
+          className={`h-[40px] w-[40px] p-[10px] bg-[#${theme}] rounded-[50%]`}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

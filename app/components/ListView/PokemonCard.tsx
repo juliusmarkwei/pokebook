@@ -83,7 +83,7 @@ const PokemonCard: FC<PokemonCardPropTypes> = ({ name, image, types }) => {
         ))}
       </div>
       <div
-        className={`opacity-0 group-hover:opacity-100 inset-0 w-[268px] h-[46px] rounded-[14px] bg-[${theme}] cursor-pointer`}
+        className={`opacity-0 group-hover:opacity-100 inset-0 w-[268px] h-[46px] rounded-[14px] bg-[#${theme}] cursor-pointer`}
         onClick={() => setSelectedCard(name)}
       >
         <ViewPokemon />
