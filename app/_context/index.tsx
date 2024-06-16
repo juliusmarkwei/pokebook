@@ -25,7 +25,10 @@ export const ContextProvider = ({
     setIsLoading(true);
 
     const fetchLinks = async () => {
-      await fetchPokemonLinks(pageSize, (selectedPageNumber + 1) * pageSize);
+      await fetchPokemonLinks(
+        pageSize,
+        (selectedPageNumber + 1) * pageSize - pageSize
+      );
     };
 
     fetchLinks();
