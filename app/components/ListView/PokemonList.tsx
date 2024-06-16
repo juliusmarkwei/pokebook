@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import PokemonCard from "./PokemonCard";
-import { useAppContext } from "@/app/_context/pokemonContext";
+import { useAppContext } from "@/app/_context";
 import { PokemonData } from "@/app/_types/pokemonData";
 import TransitionPage from "./Transition";
 

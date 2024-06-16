@@ -19,6 +19,7 @@ export const ContextProvider = ({
   const [selectedPageNumber, setSelectedPageNumber] = useState<number>(0);
   const [selectedCard, setSelectedCard] = useState<string>("");
   const [showColorTheme, setShowColorTheme] = useState<boolean>(false);
+  const [theme, setTheme] = useState<string>("#E85382");
 
   useEffect(() => {
     setIsLoading(true);
@@ -138,6 +139,8 @@ export const ContextProvider = ({
     setSelectedCard,
     showColorTheme,
     setShowColorTheme,
+    theme,
+    setTheme,
   };
 
   return (
@@ -146,5 +149,9 @@ export const ContextProvider = ({
 };
 
 export const useAppContext = () => {
-  return useContext(AppContext);
+  const context = useContext(AppContext);
+  if (!context) {
+    throw new Error("useAppContext must be used within an AppProvider");
+  }
+  return context;
 };

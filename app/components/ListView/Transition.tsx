@@ -10,7 +10,7 @@ import {
 } from "@headlessui/react";
 import { Fragment, useEffect, useState } from "react";
 import { PokemonData } from "@/app/_types/pokemonData";
-import { useAppContext } from "@/app/_context/pokemonContext";
+import { useAppContext } from "@/app/_context";
 
 const TransitionPage = ({}) => {
   const { pokemonData, selectedCard, setSelectedCard } = useAppContext();

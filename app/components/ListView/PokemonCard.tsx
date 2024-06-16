@@ -3,10 +3,10 @@ import Image from "next/image";
 import { FC } from "react";
 import { clashDisplayVariable } from "@/app/_shared/Constants";
 import ViewPokemon from "./ViewPokemon";
-import { useAppContext } from "@/app/_context/pokemonContext";
+import { useAppContext } from "@/app/_context";
 
 const PokemonCard: FC<PokemonCardPropTypes> = ({ name, image, types }) => {
-  const { setSelectedCard } = useAppContext();
+  const { setSelectedCard, theme } = useAppContext();
 
   return (
     <div
@@ -83,7 +83,7 @@ const PokemonCard: FC<PokemonCardPropTypes> = ({ name, image, types }) => {
         ))}
       </div>
       <div
-        className="opacity-0 group-hover:opacity-100 inset-0 w-[268px] h-[46px] rounded-[14px] bg-[#E85382] cursor-pointer"
+        className={`opacity-0 group-hover:opacity-100 inset-0 w-[268px] h-[46px] rounded-[14px] bg-[${theme}] cursor-pointer`}
         onClick={() => setSelectedCard(name)}
       >
         <ViewPokemon />
