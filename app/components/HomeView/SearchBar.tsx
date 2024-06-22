@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useAppContext } from "@/app/_context";
 
 const SearchBar = () => {
-	const { theme } = useAppContext();
+	const { theme, setShowNotFuncMessage } = useAppContext();
 
 	return (
 		<>
@@ -10,6 +10,7 @@ const SearchBar = () => {
 				className={`flex gap-5 items-center border-[8px] rounded-[60px] border-[#${theme}] md:w-[536px] h-[81px] w-full text-[24px] p-3 md:py-[8px] md:pl-[20px] md:pr-[9px] mt-[80px]`}
 			>
 				<input
+					onClick={() => setShowNotFuncMessage(true)}
 					type="text"
 					placeholder="Enter pokemon name"
 					className="focus:outline-none text-[#7B7B7B] text-base md:text-[24px] bg-transparent w-full h-[100%]"

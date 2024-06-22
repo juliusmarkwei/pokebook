@@ -1,6 +1,8 @@
-import React from "react";
+import { useAppContext } from "@/app/_context";
 
 const SearchBar = () => {
+	const { setShowNotFuncMessage } = useAppContext();
+
 	return (
 		<>
 			<svg
@@ -21,6 +23,7 @@ const SearchBar = () => {
 				type="text"
 				placeholder="Enter pokemon name"
 				className="text-[#7B7B7B] focus:outline-none w-full"
+				onClick={() => setShowNotFuncMessage(true)}
 			/>
 		</>
 	);

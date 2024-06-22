@@ -8,13 +8,14 @@ import { useAppContext } from "../../_context";
 import Typewriter from "typewriter-effect";
 
 const Pokemon = () => {
-	const { isLoading } = useAppContext();
+	const { isLoading, theme } = useAppContext();
+
 	return (
 		<main className="bg-[#F6F6F6] w-dvh h-[1024px] scrollbar scrollbar-thumb-gray-300] scrollbar-track-gray-200">
 			<TopBar />
 
 			{isLoading ? (
-				<span className="text-black flex justify-center mt-[30%]">
+				<span className="text-black flex justify-center mt-[60%] lg:mt-[30%]">
 					<Typewriter
 						options={{ loop: true, delay: 100 }}
 						onInit={(typewriter) => {

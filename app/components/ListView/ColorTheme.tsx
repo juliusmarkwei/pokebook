@@ -2,7 +2,7 @@ import { useAppContext } from "@/app/_context";
 import React, { useEffect } from "react";
 
 const ColorTheme = () => {
-	const { showColorTheme, setShowColorTheme, setTheme, theme } =
+	const { showColorTheme, setShowColorThemeMenu, setTheme, theme } =
 		useAppContext();
 
 	useEffect(() => {
@@ -16,7 +16,7 @@ const ColorTheme = () => {
 		}
 
 		const handleClose = () => {
-			setShowColorTheme(false);
+			setShowColorThemeMenu(false);
 		};
 
 		// Attach an event listener to handle modal close events
@@ -26,7 +26,7 @@ const ColorTheme = () => {
 		return () => {
 			modal?.removeEventListener("close", handleClose);
 		};
-	}, [showColorTheme, setShowColorTheme]);
+	}, [showColorTheme, setShowColorThemeMenu]);
 
 	return (
 		<dialog id="my_modal_2" className="modal">

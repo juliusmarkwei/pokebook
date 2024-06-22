@@ -66,7 +66,7 @@ const TransitionPage = ({}) => {
 									leaveTo="translate-x-full"
 								>
 									<DialogPanel className="pointer-events-auto w-full">
-										<div className="flex h-[1024px] flex-col bg-white shadow-xl relative">
+										<div className="flex h-[900px] lg:h-[1024px] flex-col bg-white shadow-xl relative">
 											<div className="sm:px-6">
 												<div className="mb-[10px] flex items-center justify-between">
 													<DialogTitle className="font-semibold px-[20px] old text-base leading-6 text-gray-900"></DialogTitle>
@@ -75,7 +75,7 @@ const TransitionPage = ({}) => {
 
 											<div className="w-[400px] sm:px-6">
 												{/* Content */}
-												<dialog className="flex flex-col lg:h-[1000px] w-[400px] lg:w-[580px]">
+												<dialog className="flex flex-col h-[700px] lg:h-[1000px] w-[400px] lg:w-[580px]">
 													<div className="w-[400px] lg:w-full lg:h-[340px] rounded-[15px] bg-custom-gradient flex flex-col items-center">
 														<span className="flex-grow w-[390px] lg:w-[564px] ml-3 mt-3 h-10">
 															<svg
@@ -115,7 +115,7 @@ const TransitionPage = ({}) => {
 															className="bottom-[-30px] relative w-[200px] h-[200px] lg:w-[240px] lg:h-[240px]"
 														/>
 													</div>
-													<div className="mt-[40px] lg:mt-[70px] flex flex-col gap-5 items-center justify-center">
+													<div className="mt-[30px] lg:mt-[70px] flex flex-col gap-5 items-center justify-center">
 														<h1
 															className={`w-[115px] h-[30px] text-[39px] lg:text-[48px] font-[500] leading-[29.52px] ${clashDisplayVariable.className} flex justify-center items-center`}
 														>
@@ -209,7 +209,7 @@ const TransitionPage = ({}) => {
 															)}
 														</div>
 
-														<div className="flex flex-col justify-center items-center mt-4 lg:mt-10">
+														<div className="flex flex-col justify-center items-center lg:mt-10">
 															<span className="flex flex-col justify-center items-center">
 																{minipage ===
 																"about" ? (
@@ -219,7 +219,7 @@ const TransitionPage = ({}) => {
 																		>
 																			About
 																		</h1>
-																		<div className="grid grid-cols-2 grid-rows-3 gap-x-10 gap-y-0 w-[400px] h-[110px] lg:h-[120px] justify-center items-center bg-custom-gradient2 mt-5">
+																		<div className="grid grid-cols-2 grid-rows-3 gap-x-10 gap-y-0 w-[400px] h-[110px] lg:h-[120px] justify-center items-center bg-custom-gradient2 mt-2">
 																			<div className="flex justify-end">
 																				Height
 																			</div>
@@ -418,7 +418,7 @@ const TransitionPage = ({}) => {
 																)}
 															</span>
 
-															<div className="h-[50px] w-[360px] lg:h-[64px] lg:w-[428px] rounded-[60px] bg-[#E9E9E9] absolute bottom-0 flex flex-row gap-4 justify-center items-center">
+															<div className="h-[50px] w-[360px] lg:h-[64px] lg:w-[428px] rounded-[60px] bg-[#E9E9E9] absolute bottom-0 flex flex-row gap-4 justify-center items-center z-40 ">
 																<span
 																	onClick={() => {
 																		setMinipage(
