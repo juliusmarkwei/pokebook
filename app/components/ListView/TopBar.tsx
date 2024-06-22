@@ -34,7 +34,7 @@ const TopBar = () => {
 			<div className="hidden border rounded-[30px] border-[#E1E1E1] h-[48px] w-[440px] pt-[12px] pr-[32px] pb-[12px] pl-[20px] ml-[30%] lg:flex flex-row gap-3">
 				<SearchBar />
 			</div>
-			<div className="border w-[45px] h-[45px] rounded-[50px] border-[#868686] cursor-pointer flex flex-col justify-center items-center absolute right-2">
+			<div className="border w-[45px] h-[45px] rounded-[50px] border-[#868686] cursor-pointer flex flex-col justify-center items-center absolute right-4">
 				<ThemeButton />
 			</div>
 			<ColorTheme />

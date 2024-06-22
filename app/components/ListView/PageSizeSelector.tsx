@@ -36,11 +36,11 @@ const PageSizeSelector = () => {
 
 	return (
 		<div
-			className="w-[70px] lg:h-[40px] lg:w-[95px] bg-[#E1E1E1] rounded-md py-1 lg:py-0 px-2 flex flex-row items-center gap-2 relative"
+			className="w-[70px] h-[40px] lg:w-[95px] bg-[#E1E1E1] rounded-md py-1 lg:py-0 px-2 flex flex-row items-center gap-2 relative"
 			ref={dropdownRef}
 		>
 			<h1
-				className={`flex-grow ${clashDisplayVariable.className} lg:text-lg rounded-md bg-white h-[70%] lg:h-[80%] text-center pt-1`}
+				className={`flex-grow ${clashDisplayVariable.className} lg:text-lg rounded-md bg-white lg:h-[80%] text-center pt-1`}
 			>
 				{pageSize}
 			</h1>

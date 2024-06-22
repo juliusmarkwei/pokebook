@@ -27,7 +27,7 @@ const Pokemon = () => {
 					/>
 				</span>
 			) : (
-				<section className="flex flex-col items-center justify-center gap-8 h-[790px] mt-[65px]">
+				<section className="flex flex-col items-center justify-center gap-7 h-[790px] mt-[50px]">
 					<PokemonList />
 					<div className="flex flex-row items-center w-[85%]">
 						<span className="flex-grow">

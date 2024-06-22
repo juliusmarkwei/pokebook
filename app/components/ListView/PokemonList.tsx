@@ -9,7 +9,7 @@ const PokemonList = () => {
 
 	return (
 		<section
-			className={`h-[95%] w-[90%] lg:grid lg:grid-cols-4 lg:grid-rows-${
+			className={`h-[92%] w-[90%] lg:grid lg:grid-cols-4 lg:grid-rows-${
 				pageSize === 8
 					? 2
 					: pageSize === 12
@@ -17,7 +17,7 @@ const PokemonList = () => {
 					: pageSize === 16
 					? 4
 					: 4
-			} gap-x-3 lg:gap-y-10 justify-center items-center flex flex-row flex-wrap lg:my-auto overflow-y-auto scrollbar scrollbar-thumb-gray-300 scrollbar-track-gray-200 py-8 lg:py-0`}
+			} gap-x-3 lg:gap-y-10 justify-center items-center flex flex-row flex-wrap lg:my-auto overflow-y-auto scrollbar scrollbar-thumb-gray-300 scrollbar-track-gray-200 pt-8 lg:py-0`}
 		>
 			{!isLoading &&
 				pokemonData.map((pokemon: PokemonData) => (
